@@ -1,0 +1,23 @@
+{
+  "name": "css-essentials",
+  "description": "Essential css bundle to get you started with your new project asap",
+  "main": "dist/css-essentials-min.css",
+  "authors": [
+    "Sinisa Grubor <sinisa.grubor@onefootball.com> (https://www.onefootball.com/)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "flex",
+    "grid",
+    "onefootball"
+  ],
+  "homepage": "https://github.com/Onefootball/css-essentials",
+  "moduleType": [],
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
