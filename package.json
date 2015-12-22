@@ -1,0 +1,32 @@
+{
+  "name": "css-essentials",
+  "version": "1.0.1",
+  "description": "Essential css bundle to get you started with your new project asap",
+  "main": "dist/css-essentials-min.css",
+  "files": "dist/",
+  "scripts": {
+    "prepublish": "grunt release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onefootball/css-essentials.git"
+  },
+  "keywords": [
+    "css",
+    "flex",
+    "grid",
+    "onefootball"
+  ],
+  "author": "Sinisa Grubor <sinisa.grubor@onefootball.com> (https://www.onefootball.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Onefootball/css-essentials/issues"
+  },
+  "homepage": "https://github.com/Onefootball/css-essentials#readme",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-less": "1.1.0",
+    "load-grunt-tasks": "3.4.0"
+  }
+}
