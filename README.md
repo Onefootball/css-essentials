@@ -4,6 +4,13 @@ This is a set of css components we wrote ourself while developing the best footb
 
 We'll try to keep it up to date and continuously add cool new features.
 
+### Demo
+
+You can see the demo [here] (http://5minfork.com/onefootball/css-essentials), just navigate to demo folder. 
+
+### Issues and questions
+
+Please open a github issue, if you have any issue or question
 
 ### Usage
 
@@ -68,7 +75,7 @@ By default, row has 24px padding on the side (on xxsm screens is 0, on xsm scree
 Row padding can be omitted using
 
 
-```CSS
+```xml
     .of-row-no-padding
 ```
 
