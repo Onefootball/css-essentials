@@ -1,0 +1,30 @@
+@import "spinner";
+
+.of-push-up-animation {
+  @media(min-width: @of-sm) {
+    cursor: pointer;
+    -webkit-transition-property: -webkit-transform, -webkit-box-shadow;
+    -moz-transition-property: -moz-transform, box-shadow;
+    -o-transition-property: -o-transform, box-shadow;
+    transition-property: transform, box-shadow;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    &:hover {
+      -webkit-transform: translate3d(0, -2px, 0);
+      -moz-transform: translate3d(0, -2px, 0);
+      transform: translate3d(0, -2px, 0);
+      -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.truncate-text {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

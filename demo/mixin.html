@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-Essentials Demo</title>
+    <style>
+        body {
+            background: #EEF7FC;
+            font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, 'sans-serif';
+        }
+
+        .item {
+            background: white;
+            width: 100px;
+            height: 100px;
+        }
+        .spinner {
+            text-align: center;
+            background: gray;
+            padding: 12px 0;
+        }
+        .example {
+            margin-bottom: 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="css-essentials-min.css"/>
+</head>
+<body>
+<div class="of-row">
+    <div class="xxsm-col-24 back">
+        <a href="/"> << To list </a>
+    </div>
+</div>
+
+<div class="of-row example">
+    <div class="xxsm-col-24">
+        <h3>
+            Push up animation (hover over element)
+        </h3>
+    </div>
+    <div class="xxsm-col-24">
+        <div class="item of-push-up-animation">
+        </div>
+    </div>
+</div>
+
+<div class="of-row example">
+    <div class="xxsm-col-24">
+        <h3>
+            Loading spinner
+        </h3>
+    </div>
+    <div class="xxsm-col-24 spinner">
+        <div id="loading-bar-spinner">
+            <div class="spinner-icon">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="of-row example">
+    <div class="xxsm-col-24">
+        <h3>
+            Truncate text
+        </h3>
+    </div>
+    <div class="xxsm-col-12">
+        <div class="truncate-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non elit eget turpis porttitor blandit non ac
+            felis. In consequat, ligula eu condimentum commodo, mi sapien suscipit metus, ac laoreet lorem enim id
+            nulla. Phasellus at tincidunt quam, ac auctor ex. Aenean sed gravida orci, vitae tristique ante. Suspendisse
+            vestibulum eros orci, vitae bibendum mi ullamcorper et. Nullam ultrices elementum ipsum, quis congue est
+            molestie vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Pellentesque sed elit lectus. Duis sodales urna pellentesque mi feugiat maximus. Quisque viverra libero eu
+            convallis malesuada. Sed sodales varius iaculis. Phasellus cursus pulvinar magna, a elementum arcu blandit
+            in. Vivamus ultrices velit vel felis laoreet, at cursus metus molestie. Maecenas dolor dui, commodo nec
+            turpis eu, suscipit vehicula massa.
+        </div>
+    </div>
+</div>
+</body>
+</html>
