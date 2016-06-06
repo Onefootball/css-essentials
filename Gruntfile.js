@@ -5,7 +5,8 @@ module.exports = function(grunt) {
         less: {
             production: {
                 options: {
-                    compress: true
+                    compress: true,
+                    modifyVars: cleanUpInputLessGridVars()
                 },
                 files: {
                     "dist/css-essentials-min.css": "src/all.less"
@@ -35,4 +36,29 @@ module.exports = function(grunt) {
     });
     grunt.registerTask('release', ['less:production']);
     grunt.registerTask('demo', ['less:production', 'copy:demo', 'connect:demo']);
+
+    function cleanUpInputLessGridVars() {
+      var lessModifyVars = {
+        'of-xsm' : grunt.option('xsm'),
+        'of-sm'  : grunt.option('sm'),
+        'of-md'  : grunt.option('md'),
+        'of-lg'  : grunt.option('lg'),
+        'of-xlg' : grunt.option('xlg'),
+        'of-xxlg': grunt.option('xxlg')
+      };
+
+      var counter = 0;
+      for(var key in lessModifyVars) {
+        var value = lessModifyVars[key];
+        if (value === undefined || value === null) {
+          delete lessModifyVars[key];
+        } else {
+          counter = counter + 1;
+        }
+      }
+      if (counter === 0) {
+        lessModifyVars = undefined;
+      }
+      return lessModifyVars;
+    }
 };
