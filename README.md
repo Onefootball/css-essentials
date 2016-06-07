@@ -6,7 +6,7 @@ We'll try to keep it up to date and continuously add cool new features.
 
 ### Demo
 
-You can see the demo [here] (http://5minfork.com/onefootball/css-essentials), just navigate to demo folder. 
+You can see the demo [here] (http://5minfork.com/onefootball/css-essentials), just navigate to demo folder.
 
 ### Issues and questions
 
@@ -83,9 +83,9 @@ Row padding can be omitted using
 
 ##### Loading spinner
 
-Loading spinner can be used to indicate loading. 
+Loading spinner can be used to indicate loading.
 
-Quick start: 
+Quick start:
 
 ```xml
 <div class="of-row">
@@ -100,9 +100,9 @@ Quick start:
 
 ##### Truncate text
 
-Truncate text is usefull, when you want to display text in one line and truncate it, if it exceeds the width of a line. 
+Truncate text is usefull, when you want to display text in one line and truncate it, if it exceeds the width of a line.
 
-Quick start: 
+Quick start:
 
 ```xml
 <div class="of-row">
@@ -124,13 +124,43 @@ Quick start:
 
 ##### Push up animation
 
-Push up animation is a nice effect for hovering on elements. 
+Push up animation is a nice effect for hovering on elements.
 
-Quick start: 
+Quick start:
 
-Just append 
+Just append
 
 ```xml
 .of-push-up-animation
 ```
 class to any of your elements.
+
+
+### Customization
+
+It is possible to edit the grid breakpoints by editing the values in the `src/base/breakpoints.less` file and then recompiling the project.
+
+```shell
+
+$ npm install && grunt release
+
+```
+
+#### Command Line Values
+
+In addition to this, it is possible to pass in, to the grunt command, the desired values for the grid breakpoints:
+
+```shell
+$ npm install && grunt release --xsm='300px' --sm='400px' --md='500px' --lg='600px' --xlg='700px' --xxlg='800px'
+
+```
+
+This would generate a file in the dist folder with the given values.
+The accepted variables are:
+
+- --xsm
+- --sm
+- --md
+- --lg
+- --xlg
+- --xxlg
