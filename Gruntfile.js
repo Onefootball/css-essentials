@@ -39,26 +39,45 @@ module.exports = function(grunt) {
 
     function cleanUpInputLessGridVars() {
       var lessModifyVars = {
-        'of-xsm' : grunt.option('xsm'),
-        'of-sm'  : grunt.option('sm'),
-        'of-md'  : grunt.option('md'),
-        'of-lg'  : grunt.option('lg'),
-        'of-xlg' : grunt.option('xlg'),
-        'of-xxlg': grunt.option('xxlg')
+        'breakpoints' : grunt.option('breakpoints')
       };
 
-      var counter = 0;
       for(var key in lessModifyVars) {
         var value = lessModifyVars[key];
         if (value === undefined || value === null) {
           delete lessModifyVars[key];
-        } else {
-          counter = counter + 1;
         }
       }
-      if (counter === 0) {
+      if (Object.keys(lessModifyVars) === 0) {
         lessModifyVars = undefined;
       }
+
+      var error = false;
+      if (lessModifyVars.breakpoints !== undefined) {
+        var breakpointString = lessModifyVars.breakpoints;
+        var br = breakpointString.split(',');
+        br.forEach(function(b, index) {
+          try {
+            b = b.trim();
+            lessModifyVars.breakpoints[index] = b;
+            var split = b.split(' ');
+            if (split.length !== 2) { error = true; }
+            var pix = split[1];
+            if (pix !== '0' && pix.length < 3) { error = true; }
+            if (pix.length >= 3 && pix.substring(pix.length-2) !== 'px') { error = true; }
+          } catch (e) {
+            error = true;
+          }
+        });
+      }
+
+      if (error) {
+        console.info('');
+        console.info('  -- invalid breakpoints string, using defaults --');
+        console.info('');
+        lessModifyVars = undefined;
+      }
+
       return lessModifyVars;
     }
 };

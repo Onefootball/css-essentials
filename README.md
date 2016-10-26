@@ -1,6 +1,6 @@
 ### CSS Essentials
 
-This is a set of css components we wrote ourself while developing the best football app - https://www.onefootball.com .
+This is a set of css components we wrote ourself while developing the best football app - [https://www.onefootball.com](https://www.onefootball.com) .
 
 We'll try to keep it up to date and continuously add cool new features.
 
@@ -148,19 +148,19 @@ $ npm install && grunt release
 
 #### Command Line Values
 
+
 In addition to this, it is possible to pass in, to the grunt command, the desired values for the grid breakpoints:
 
 ```shell
-$ npm install && grunt release --xsm='300px' --sm='400px' --md='500px' --lg='600px' --xlg='700px' --xxlg='800px'
+$ npm install && grunt release --breakpoints='xxsm 0px, xsm 460px, sm 606px, md 800px, lg 1164px, xlg 1440px, xxlg 1740px'
 
 ```
 
-This would generate a file in the dist folder with the given values.
-The accepted variables are:
+This the brakpoints argument will override the default value specified in `src/base/breakpoints.less`.
+It has to be a _lesscss array value_ separated by comma.
 
-- --xsm
-- --sm
-- --md
-- --lg
-- --xlg
-- --xxlg
+Then each breakpoint is made of `<name><space><width>`:
+
+-   `<name>` is a string and it will be used to identify your breakpoint, its classes will use this
+-   `<space>` a simple space to separate the name and the width
+-   `<width>` a value expressed in px (correct values are like: 0px, 300px, 500px and so on)
