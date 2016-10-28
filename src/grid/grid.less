@@ -5,7 +5,7 @@
 @import "common.less";
 
 // output the grid
-.generate-row-spacing-adjustment();
+.generate-spacing-adjustment();
 .generate-cols-groups();
 
 //--------------- //
@@ -31,14 +31,31 @@
 }
 
 // row adjustment generator
-.generate-row-spacing-adjustment() {
+.generate-spacing-adjustment() {
   .optional-spacing() when (length(@breakpoints) > 1) {
     @smallestWidth: extract(extract(@breakpoints, 1), 2);
     @smallestClassName: extract(extract(@breakpoints, 1), 1);
     @othersWidth: extract(extract(@breakpoints, 2), 2);
+
+    .gen(@colnum) when (@colnum > 0) {
+      .gen((@colnum - 1));    // next iteration
+      *[class*="-col-@{colnum}"] {
+        width: (@colnum * @column-width);
+      }
+    }
+    .gen(@column-number); // output base width
+
     @media(min-width: @smallestWidth) {
       .of-row {
         padding: 0 0.5*@gutter;
+      }
+    }
+    @media(max-width: (@smallestWidth - 1)) {
+      .of-row {
+        *[class*="@{smallestClassName}-col-"] {
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
     }
     @media(max-width: (@othersWidth - 1)) {
