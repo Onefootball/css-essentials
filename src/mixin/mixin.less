@@ -1,7 +1,7 @@
 @import "spinner";
 
 .of-push-up-animation {
-  @media(min-width: @of-sm) {
+  @media(min-width: 1025px) { /* 1025px: arbitrary value in order to skip animations on smaller devices */
     cursor: pointer;
     -webkit-transition-property: -webkit-transform, -webkit-box-shadow;
     -moz-transition-property: -moz-transform, box-shadow;

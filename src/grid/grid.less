@@ -3,10 +3,74 @@
 @gutter: 12px;
 
 @import "common.less";
-@import "xxsm-grid.less";
-@import "xsm-grid.less";
-@import "sm-grid.less";
-@import "md-grid.less";
-@import "lg-grid.less";
-@import "xlg-grid.less";
-@import "xxlg-grid.less";
+
+// output the grid
+.generate-spacing-adjustment();
+.generate-cols-groups();
+
+//--------------- //
+//   GENERATORS   //
+//--------------- //
+
+//column generator
+.generate-cols(@colnum) when (@colnum > 0) {
+  .generate-cols((@colnum - 1));    // next iteration
+  .@{name}-col-@{colnum} {
+    width: (@colnum * @column-width);
+  }
+}
+
+//columns group generator
+.generate-cols-groups(@n: (length(@breakpoints)), @i: 1) when (@i =< @n) {
+  @name: extract(extract(@breakpoints, @i), 1);
+  @vw: extract(extract(@breakpoints, @i), 2);
+  @media(min-width: @vw) {
+    .generate-cols(@column-number);
+  }
+  .generate-cols-groups(@n, (@i + 1)); // next iteration
+}
+
+// row adjustment generator
+.generate-spacing-adjustment() {
+  .optional-spacing() when (length(@breakpoints) > 1) {
+    @smallestWidth: extract(extract(@breakpoints, 1), 2);
+    @smallestClassName: extract(extract(@breakpoints, 1), 1);
+    @othersWidth: extract(extract(@breakpoints, 2), 2);
+
+    .gen(@colnum) when (@colnum > 0) {
+      .gen((@colnum - 1));    // next iteration
+      *[class*="-col-@{colnum}"] {
+        width: (@colnum * @column-width);
+      }
+    }
+    .gen(@column-number); // output base width
+
+    @media(min-width: @smallestWidth) {
+      .of-row {
+        padding: 0 0.5*@gutter;
+      }
+    }
+    @media(max-width: (@smallestWidth - 1)) {
+      .of-row {
+        *[class*="@{smallestClassName}-col-"] {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+    @media(max-width: (@othersWidth - 1)) {
+      .of-row {
+        *[class*="@{smallestClassName}-col-"] {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+    @media(min-width: @othersWidth) {
+      .of-row {
+        padding: 0 1.5*@gutter;
+      }
+    }
+  }
+  .optional-spacing();
+}
