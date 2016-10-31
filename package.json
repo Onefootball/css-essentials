@@ -1,6 +1,6 @@
 {
   "name": "css-essentials",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Essential css bundle to get you started with your new project asap",
   "main": "dist/css-essentials-min.css",
   "files": [
@@ -22,6 +22,9 @@
     "onefootball"
   ],
   "author": "Sinisa Grubor <sinisa.grubor@onefootball.com> (https://www.onefootball.com/)",
+  "contributors": [
+    "Andrea Dessì <andrea.dessi@onefootball.com> (https://www.onefootball.com/)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Onefootball/css-essentials/issues"
