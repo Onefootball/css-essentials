@@ -1,6 +1,6 @@
 {
   "name": "css-essentials",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Essential css bundle to get you started with your new project asap",
   "main": "dist/css-essentials-min.css",
   "files": [
