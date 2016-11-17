@@ -50,22 +50,6 @@
         padding: 0 0.5*@gutter;
       }
     }
-    @media(max-width: (@smallestWidth - 1)) {
-      .of-row {
-        *[class*="@{smallestClassName}-col-"] {
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-    }
-    @media(max-width: (@othersWidth - 1)) {
-      .of-row {
-        *[class*="@{smallestClassName}-col-"] {
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-    }
     @media(min-width: @othersWidth) {
       .of-row {
         padding: 0 1.5*@gutter;
