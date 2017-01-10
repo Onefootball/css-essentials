@@ -37,14 +37,6 @@
     @smallestClassName: extract(extract(@breakpoints, 1), 1);
     @othersWidth: extract(extract(@breakpoints, 2), 2);
 
-    .gen(@colnum) when (@colnum > 0) {
-      .gen((@colnum - 1));    // next iteration
-      *[class*="-col-@{colnum}"] {
-        width: (@colnum * @column-width);
-      }
-    }
-    .gen(@column-number); // output base width
-
     @media(min-width: @smallestWidth) {
       .of-row {
         padding: 0 0.5*@gutter;
