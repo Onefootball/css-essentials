@@ -3,7 +3,8 @@
   "description": "Essential css bundle to get you started with your new project asap",
   "main": "dist/css-essentials-min.css",
   "authors": [
-    "Sinisa Grubor <sinisa.grubor@onefootball.com> (https://www.onefootball.com/)"
+    "Sinisa Grubor <sinisa.grubor@onefootball.com> (https://www.onefootball.com/)",
+    "Andrea Dessi <andrea.dessi@onefootball.com>  (https://www.onefootball.com/)"
   ],
   "license": "MIT",
   "keywords": [
